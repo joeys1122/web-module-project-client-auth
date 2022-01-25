@@ -14,11 +14,11 @@ function App() {
         <h2>Client Auth Project</h2>
         <Link to='/login'>Login</Link>
         <Link to='/friends'>Friend List</Link>
-        <Link to='/addfriend'>Add Friend</Link>
+        <Link to='/friends/add'>Add Friend</Link>
         <Link to='/logout'>Logout</Link>
         <Switch>
           <Route path='/logout' component={Logout}/>
-          <Route path='/addfriend' component={AddFriends}/>
+          <Route path='/friends/add' component={AddFriends}/>
           <Route path='/friends' component={FriendsList}/>
           <Route path='/login' component={Login}/>
           <Route path='/' component={Login}/>
