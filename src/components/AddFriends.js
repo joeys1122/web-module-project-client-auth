@@ -1,7 +1,8 @@
 import React from "react";
-import axios from "axios";
 
 import { nanoid } from "nanoid";
+
+import axiosWithAuth from "../utils/axiosWithAuth";
 
 class AddFriends extends React.Component {
   state = {
@@ -25,18 +26,13 @@ class AddFriends extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     
-    const token = localStorage.getItem('token');
     const newFriend = {
       ...this.state.credentials,
       id: nanoid(5)
     }
 
-    axios
-      .post('http://localhost:9000/api/friends', newFriend, {
-        headers: {
-          authorization: token
-        }
-      })
+    axiosWithAuth()
+      .post('/friends', newFriend)
       .then(res => {
         console.log(res);
         this.setState({
