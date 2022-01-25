@@ -2,9 +2,9 @@ import React from "react";
 
 const Friend = ({ friend }) => {
   return (
-    <div>
-      {friend.name}{friend.email}
-    </div>
+    <p>
+      -{friend.name} -{friend.email}
+    </p>
   )
 }
 

@@ -12,11 +12,15 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h2>Client Auth Project</h2>
-        <Link to='/login'>Login</Link>
-        <Link to='/friends'>Friend List</Link>}
-        <Link to='/friends/add'>Add Friend</Link>
-        <Link to='/logout'>Logout</Link>
+        <div className='header'>
+          <h2>Friends Database</h2>
+          <nav>
+            <Link to='/login'>Login</Link>
+            <Link to='/friends'>Friend List</Link>
+            <Link to='/friends/add'>Add Friend</Link>
+            <Link to='/logout'>Logout</Link>
+          </nav>
+        </div>
         <Switch>
           <PrivateRoute exact path='/friends/add' component={AddFriends}/>
           <PrivateRoute exact path='/friends' component={FriendsList}/>
